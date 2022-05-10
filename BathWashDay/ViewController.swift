@@ -11,6 +11,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var washLabel: UILabel!
     @IBOutlet weak var lastWashDate: UILabel!
+    @IBOutlet weak var navigationBar: UINavigationBar!
     
     
     var dao = UserDefaultDao()
@@ -20,6 +21,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         checkDate()
+        navigationBar.delegate = self
+        navigationBar.prefersLargeTitles = true
     }
     
     func checkDate() {
@@ -82,3 +85,8 @@ class ViewController: UIViewController {
     
 }
 
+extension ViewController: UINavigationBarDelegate {
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        .topAttached
+    }
+}

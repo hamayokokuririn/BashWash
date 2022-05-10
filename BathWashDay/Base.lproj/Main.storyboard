@@ -32,7 +32,7 @@
                                 </items>
                             </toolbar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9QQ-YX-fZn">
-                                <rect key="frame" x="24" y="172" width="366" height="73"/>
+                                <rect key="frame" x="24" y="216" width="366" height="78"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日は" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJi-AC-bo5">
                                         <rect key="frame" x="0.0" y="0.0" width="73" height="29"/>
@@ -40,34 +40,28 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="風呂掃除をする日です" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pvf-iH-ZSb">
-                                        <rect key="frame" x="0.0" y="37" width="303.5" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="風呂掃除をする日です" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pvf-iH-ZSb">
+                                        <rect key="frame" x="0.0" y="37" width="300" height="41"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Qs6-1g-xbX">
-                                <rect key="frame" x="24" y="269" width="160.5" height="49.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Qs6-1g-xbX">
+                                <rect key="frame" x="291" y="318" width="99" height="49.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最後に洗った日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JwW-yu-1Dl">
-                                        <rect key="frame" x="0.0" y="0.0" width="128.5" height="21.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最終更新" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JwW-yu-1Dl">
+                                        <rect key="frame" x="25.5" y="0.0" width="73.5" height="21.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pyU-dD-wcs">
-                                        <rect key="frame" x="0.0" y="25.5" width="160.5" height="24"/>
+                                        <rect key="frame" x="0.0" y="25.5" width="99" height="24"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日付：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbH-0m-zIL">
-                                                <rect key="frame" x="0.0" y="0.0" width="61.5" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022/01/01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRu-7e-cfe">
-                                                <rect key="frame" x="61.5" y="0.0" width="99" height="24"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="99" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -76,23 +70,33 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQq-bQ-31X">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="BathWash" largeTitleDisplayMode="always" id="ADe-MO-nP4"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jgs-LL-p4j" secondAttribute="bottom" id="0Gd-K4-LXP"/>
                             <constraint firstItem="jgs-LL-p4j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DOK-Il-8dw"/>
-                            <constraint firstItem="9QQ-YX-fZn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="128" id="EDd-DB-aYP"/>
+                            <constraint firstItem="9QQ-YX-fZn" firstAttribute="top" secondItem="kQq-bQ-31X" secondAttribute="bottom" constant="128" id="EDd-DB-aYP"/>
+                            <constraint firstItem="kQq-bQ-31X" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="P9k-ei-8Za"/>
+                            <constraint firstItem="kQq-bQ-31X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ddC-dS-yXx"/>
                             <constraint firstItem="9QQ-YX-fZn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="g3R-NF-MPf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jgs-LL-p4j" secondAttribute="trailing" id="iKP-oB-fpc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9QQ-YX-fZn" secondAttribute="trailing" constant="24" id="jYx-4e-8Ay"/>
                             <constraint firstItem="9QQ-YX-fZn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wpm-gJ-yla"/>
-                            <constraint firstItem="9QQ-YX-fZn" firstAttribute="leading" secondItem="Qs6-1g-xbX" secondAttribute="leading" id="zdD-ro-rTo"/>
+                            <constraint firstItem="9QQ-YX-fZn" firstAttribute="trailing" secondItem="Qs6-1g-xbX" secondAttribute="trailing" id="zdD-ro-rTo"/>
                             <constraint firstItem="Qs6-1g-xbX" firstAttribute="top" secondItem="9QQ-YX-fZn" secondAttribute="bottom" constant="24" id="zj5-2A-l63"/>
+                            <constraint firstItem="kQq-bQ-31X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zrZ-yD-8fM"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="lastWashDate" destination="fRu-7e-cfe" id="1RD-gm-lls"/>
+                        <outlet property="navigationBar" destination="kQq-bQ-31X" id="247-8J-adp"/>
                         <outlet property="washLabel" destination="Pvf-iH-ZSb" id="HYh-X5-5IA"/>
                     </connections>
                 </viewController>
