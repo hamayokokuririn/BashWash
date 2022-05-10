@@ -7,15 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		247E06462829FA2A00C85663 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247E06452829FA2A00C85663 /* NotificationService.swift */; };
 		249250992829429E009E4417 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249250982829429E009E4417 /* AppDelegate.swift */; };
 		2492509B2829429E009E4417 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2492509A2829429E009E4417 /* SceneDelegate.swift */; };
 		2492509D2829429E009E4417 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2492509C2829429E009E4417 /* ViewController.swift */; };
 		249250A02829429E009E4417 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2492509E2829429E009E4417 /* Main.storyboard */; };
 		249250A2282942A2009E4417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 249250A1282942A2009E4417 /* Assets.xcassets */; };
 		249250A5282942A2009E4417 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 249250A3282942A2009E4417 /* LaunchScreen.storyboard */; };
+		249250B32829467B009E4417 /* BathWashDayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249250B22829467B009E4417 /* BathWashDayTests.swift */; };
+		249250BB282946D8009E4417 /* WashDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249250BA282946D8009E4417 /* WashDay.swift */; };
+		249250BD28294F19009E4417 /* UserDefaultDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249250BC28294F19009E4417 /* UserDefaultDao.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		249250B42829467B009E4417 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2492508D2829429E009E4417 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 249250942829429E009E4417;
+			remoteInfo = BathWashDay;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		247E06452829FA2A00C85663 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		249250952829429E009E4417 /* BathWashDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BathWashDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		249250982829429E009E4417 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2492509A2829429E009E4417 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,10 +39,21 @@
 		249250A1282942A2009E4417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		249250A4282942A2009E4417 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		249250A6282942A2009E4417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		249250B02829467B009E4417 /* BathWashDayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BathWashDayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		249250B22829467B009E4417 /* BathWashDayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathWashDayTests.swift; sourceTree = "<group>"; };
+		249250BA282946D8009E4417 /* WashDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashDay.swift; sourceTree = "<group>"; };
+		249250BC28294F19009E4417 /* UserDefaultDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultDao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		249250922829429E009E4417 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		249250AD2829467B009E4417 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				249250972829429E009E4417 /* BathWashDay */,
+				249250B12829467B009E4417 /* BathWashDayTests */,
 				249250962829429E009E4417 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				249250952829429E009E4417 /* BathWashDay.app */,
+				249250B02829467B009E4417 /* BathWashDayTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,6 +84,7 @@
 		249250972829429E009E4417 /* BathWashDay */ = {
 			isa = PBXGroup;
 			children = (
+				249250B9282946C3009E4417 /* Model */,
 				249250982829429E009E4417 /* AppDelegate.swift */,
 				2492509A2829429E009E4417 /* SceneDelegate.swift */,
 				2492509C2829429E009E4417 /* ViewController.swift */,
@@ -65,6 +94,24 @@
 				249250A6282942A2009E4417 /* Info.plist */,
 			);
 			path = BathWashDay;
+			sourceTree = "<group>";
+		};
+		249250B12829467B009E4417 /* BathWashDayTests */ = {
+			isa = PBXGroup;
+			children = (
+				249250B22829467B009E4417 /* BathWashDayTests.swift */,
+			);
+			path = BathWashDayTests;
+			sourceTree = "<group>";
+		};
+		249250B9282946C3009E4417 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				249250BA282946D8009E4417 /* WashDay.swift */,
+				249250BC28294F19009E4417 /* UserDefaultDao.swift */,
+				247E06452829FA2A00C85663 /* NotificationService.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +134,24 @@
 			productReference = 249250952829429E009E4417 /* BathWashDay.app */;
 			productType = "com.apple.product-type.application";
 		};
+		249250AF2829467B009E4417 /* BathWashDayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 249250B62829467B009E4417 /* Build configuration list for PBXNativeTarget "BathWashDayTests" */;
+			buildPhases = (
+				249250AC2829467B009E4417 /* Sources */,
+				249250AD2829467B009E4417 /* Frameworks */,
+				249250AE2829467B009E4417 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				249250B52829467B009E4417 /* PBXTargetDependency */,
+			);
+			name = BathWashDayTests;
+			productName = BathWashDayTests;
+			productReference = 249250B02829467B009E4417 /* BathWashDayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +164,10 @@
 				TargetAttributes = {
 					249250942829429E009E4417 = {
 						CreatedOnToolsVersion = 13.3.1;
+					};
+					249250AF2829467B009E4417 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 249250942829429E009E4417;
 					};
 				};
 			};
@@ -116,6 +185,7 @@
 			projectRoot = "";
 			targets = (
 				249250942829429E009E4417 /* BathWashDay */,
+				249250AF2829467B009E4417 /* BathWashDayTests */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +201,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		249250AE2829467B009E4417 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -139,12 +216,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				2492509D2829429E009E4417 /* ViewController.swift in Sources */,
+				249250BB282946D8009E4417 /* WashDay.swift in Sources */,
 				249250992829429E009E4417 /* AppDelegate.swift in Sources */,
 				2492509B2829429E009E4417 /* SceneDelegate.swift in Sources */,
+				247E06462829FA2A00C85663 /* NotificationService.swift in Sources */,
+				249250BD28294F19009E4417 /* UserDefaultDao.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		249250AC2829467B009E4417 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				249250B32829467B009E4417 /* BathWashDayTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		249250B52829467B009E4417 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 249250942829429E009E4417 /* BathWashDay */;
+			targetProxy = 249250B42829467B009E4417 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2492509E2829429E009E4417 /* Main.storyboard */ = {
@@ -336,6 +432,42 @@
 			};
 			name = Release;
 		};
+		249250B72829467B009E4417 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 39WWX2FY3V;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = saitoh0526.k.BathWashDayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BathWashDay.app/BathWashDay";
+			};
+			name = Debug;
+		};
+		249250B82829467B009E4417 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 39WWX2FY3V;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = saitoh0526.k.BathWashDayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BathWashDay.app/BathWashDay";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -353,6 +485,15 @@
 			buildConfigurations = (
 				249250AA282942A2009E4417 /* Debug */,
 				249250AB282942A2009E4417 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		249250B62829467B009E4417 /* Build configuration list for PBXNativeTarget "BathWashDayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				249250B72829467B009E4417 /* Debug */,
+				249250B82829467B009E4417 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

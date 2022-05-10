@@ -14,6 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Task {
+            do {
+                if try await NotificationService.shared.requestAuthorization() {
+                    NotificationService.shared.registerRepeat()
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        
+        
         return true
     }
 
