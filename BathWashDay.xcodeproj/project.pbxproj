@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		241C41CF282A1144008995C9 /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 241C41CE282A1144008995C9 /* sound.mp3 */; };
 		247E06462829FA2A00C85663 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247E06452829FA2A00C85663 /* NotificationService.swift */; };
 		249250992829429E009E4417 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249250982829429E009E4417 /* AppDelegate.swift */; };
 		2492509B2829429E009E4417 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2492509A2829429E009E4417 /* SceneDelegate.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		241C41CE282A1144008995C9 /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sound.mp3; path = ../../../../Downloads/sound.mp3; sourceTree = "<group>"; };
 		247E06452829FA2A00C85663 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		249250952829429E009E4417 /* BathWashDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BathWashDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		249250982829429E009E4417 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		241C41CD282A1118008995C9 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				241C41CE282A1144008995C9 /* sound.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		2492508C2829429E009E4417 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 		249250972829429E009E4417 /* BathWashDay */ = {
 			isa = PBXGroup;
 			children = (
+				241C41CD282A1118008995C9 /* Sounds */,
 				249250B9282946C3009E4417 /* Model */,
 				249250982829429E009E4417 /* AppDelegate.swift */,
 				2492509A2829429E009E4417 /* SceneDelegate.swift */,
@@ -195,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				241C41CF282A1144008995C9 /* sound.mp3 in Resources */,
 				249250A5282942A2009E4417 /* LaunchScreen.storyboard in Resources */,
 				249250A2282942A2009E4417 /* Assets.xcassets in Resources */,
 				249250A02829429E009E4417 /* Main.storyboard in Resources */,

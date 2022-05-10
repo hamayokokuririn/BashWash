@@ -26,7 +26,7 @@ class NotificationService: NSObject {
     func registerRepeat() {
         let content = UNMutableNotificationContent()
         content.title = "風呂掃除をチェック"
-        content.sound = UNNotificationSound.default
+        content.sound = UNNotificationSound(named: UNNotificationSoundName("sound.mp3"))
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: DateComponents(hour: 17), repeats: true)
         let request = UNNotificationRequest(identifier: "today",
