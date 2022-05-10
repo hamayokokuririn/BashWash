@@ -25,6 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        let watch = WatchService.shared
+        
+        let dao = UserDefaultDao.init()
+        if let date = dao.storedDate {
+            watch.handler = {
+                watch.transfer(dateString: date.ISO8601Format())
+            }
+        }
+        
         
         return true
     }

@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		241C41CF282A1144008995C9 /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 241C41CE282A1144008995C9 /* sound.mp3 */; };
+		241C41D5282AB203008995C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241C41D4282AB203008995C9 /* Assets.xcassets */; };
+		241C41DB282AB203008995C9 /* BathWashForWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 241C41DA282AB203008995C9 /* BathWashForWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		241C41E0282AB203008995C9 /* BathWashDayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C41DF282AB203008995C9 /* BathWashDayApp.swift */; };
+		241C41E2282AB203008995C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C41E1282AB203008995C9 /* ContentView.swift */; };
+		241C41E4282AB203008995C9 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C41E3282AB203008995C9 /* NotificationController.swift */; };
+		241C41E6282AB203008995C9 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C41E5282AB203008995C9 /* NotificationView.swift */; };
+		241C41E8282AB203008995C9 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C41E7282AB203008995C9 /* ComplicationController.swift */; };
+		241C41EA282AB205008995C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241C41E9282AB205008995C9 /* Assets.xcassets */; };
+		241C41ED282AB205008995C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241C41EC282AB205008995C9 /* Preview Assets.xcassets */; };
+		241C41F2282AB205008995C9 /* BathWashForWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 241C41D2282AB1FF008995C9 /* BathWashForWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		241C41FC282AB5CF008995C9 /* WatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C41FB282AB5CE008995C9 /* WatchService.swift */; };
+		241C41FE282AB7F5008995C9 /* WatchConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C41FD282AB7F5008995C9 /* WatchConnectivity.swift */; };
 		247E06462829FA2A00C85663 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247E06452829FA2A00C85663 /* NotificationService.swift */; };
 		249250992829429E009E4417 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249250982829429E009E4417 /* AppDelegate.swift */; };
 		2492509B2829429E009E4417 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2492509A2829429E009E4417 /* SceneDelegate.swift */; };
@@ -21,6 +33,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		241C41DC282AB203008995C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2492508D2829429E009E4417 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 241C41D9282AB203008995C9;
+			remoteInfo = "BathWashForWatch WatchKit Extension";
+		};
+		241C41F0282AB205008995C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2492508D2829429E009E4417 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 241C41D1282AB1FF008995C9;
+			remoteInfo = BathWashForWatch;
+		};
 		249250B42829467B009E4417 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2492508D2829429E009E4417 /* Project object */;
@@ -30,8 +56,47 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		241C41F6282AB205008995C9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				241C41DB282AB203008995C9 /* BathWashForWatch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		241C41FA282AB205008995C9 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				241C41F2282AB205008995C9 /* BathWashForWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		241C41CE282A1144008995C9 /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sound.mp3; path = ../../../../Downloads/sound.mp3; sourceTree = "<group>"; };
+		241C41D2282AB1FF008995C9 /* BathWashForWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BathWashForWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		241C41D4282AB203008995C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		241C41DA282AB203008995C9 /* BathWashForWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BathWashForWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		241C41DF282AB203008995C9 /* BathWashDayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathWashDayApp.swift; sourceTree = "<group>"; };
+		241C41E1282AB203008995C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		241C41E3282AB203008995C9 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		241C41E5282AB203008995C9 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		241C41E7282AB203008995C9 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		241C41E9282AB205008995C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		241C41EC282AB205008995C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		241C41EE282AB205008995C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		241C41EF282AB205008995C9 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		241C41FB282AB5CE008995C9 /* WatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchService.swift; sourceTree = "<group>"; };
+		241C41FD282AB7F5008995C9 /* WatchConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivity.swift; sourceTree = "<group>"; };
 		247E06452829FA2A00C85663 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		249250952829429E009E4417 /* BathWashDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BathWashDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		249250982829429E009E4417 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +113,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		241C41D7282AB203008995C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		249250922829429E009E4417 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -73,11 +145,46 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		241C41D3282AB1FF008995C9 /* BathWashForWatch */ = {
+			isa = PBXGroup;
+			children = (
+				241C41D4282AB203008995C9 /* Assets.xcassets */,
+			);
+			path = BathWashForWatch;
+			sourceTree = "<group>";
+		};
+		241C41DE282AB203008995C9 /* BathWashForWatch WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				241C41DF282AB203008995C9 /* BathWashDayApp.swift */,
+				241C41E1282AB203008995C9 /* ContentView.swift */,
+				241C41E3282AB203008995C9 /* NotificationController.swift */,
+				241C41E5282AB203008995C9 /* NotificationView.swift */,
+				241C41E7282AB203008995C9 /* ComplicationController.swift */,
+				241C41E9282AB205008995C9 /* Assets.xcassets */,
+				241C41EE282AB205008995C9 /* Info.plist */,
+				241C41EF282AB205008995C9 /* PushNotificationPayload.apns */,
+				241C41EB282AB205008995C9 /* Preview Content */,
+				241C41FD282AB7F5008995C9 /* WatchConnectivity.swift */,
+			);
+			path = "BathWashForWatch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		241C41EB282AB205008995C9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				241C41EC282AB205008995C9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		2492508C2829429E009E4417 = {
 			isa = PBXGroup;
 			children = (
 				249250972829429E009E4417 /* BathWashDay */,
 				249250B12829467B009E4417 /* BathWashDayTests */,
+				241C41D3282AB1FF008995C9 /* BathWashForWatch */,
+				241C41DE282AB203008995C9 /* BathWashForWatch WatchKit Extension */,
 				249250962829429E009E4417 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,6 +194,8 @@
 			children = (
 				249250952829429E009E4417 /* BathWashDay.app */,
 				249250B02829467B009E4417 /* BathWashDayTests.xctest */,
+				241C41D2282AB1FF008995C9 /* BathWashForWatch.app */,
+				241C41DA282AB203008995C9 /* BathWashForWatch WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,6 +230,7 @@
 				249250BA282946D8009E4417 /* WashDay.swift */,
 				249250BC28294F19009E4417 /* UserDefaultDao.swift */,
 				247E06452829FA2A00C85663 /* NotificationService.swift */,
+				241C41FB282AB5CE008995C9 /* WatchService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -128,6 +238,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		241C41D1282AB1FF008995C9 /* BathWashForWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 241C41F7282AB205008995C9 /* Build configuration list for PBXNativeTarget "BathWashForWatch" */;
+			buildPhases = (
+				241C41D0282AB1FF008995C9 /* Resources */,
+				241C41F6282AB205008995C9 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				241C41DD282AB203008995C9 /* PBXTargetDependency */,
+			);
+			name = BathWashForWatch;
+			productName = BathWashForWatch;
+			productReference = 241C41D2282AB1FF008995C9 /* BathWashForWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		241C41D9282AB203008995C9 /* BathWashForWatch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 241C41F3282AB205008995C9 /* Build configuration list for PBXNativeTarget "BathWashForWatch WatchKit Extension" */;
+			buildPhases = (
+				241C41D6282AB203008995C9 /* Sources */,
+				241C41D7282AB203008995C9 /* Frameworks */,
+				241C41D8282AB203008995C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BathWashForWatch WatchKit Extension";
+			productName = "BathWashForWatch WatchKit Extension";
+			productReference = 241C41DA282AB203008995C9 /* BathWashForWatch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		249250942829429E009E4417 /* BathWashDay */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 249250A9282942A2009E4417 /* Build configuration list for PBXNativeTarget "BathWashDay" */;
@@ -135,10 +279,12 @@
 				249250912829429E009E4417 /* Sources */,
 				249250922829429E009E4417 /* Frameworks */,
 				249250932829429E009E4417 /* Resources */,
+				241C41FA282AB205008995C9 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				241C41F1282AB205008995C9 /* PBXTargetDependency */,
 			);
 			name = BathWashDay;
 			productName = BathWashDay;
@@ -173,6 +319,12 @@
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					241C41D1282AB1FF008995C9 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					241C41D9282AB203008995C9 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
 					249250942829429E009E4417 = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
@@ -197,11 +349,30 @@
 			targets = (
 				249250942829429E009E4417 /* BathWashDay */,
 				249250AF2829467B009E4417 /* BathWashDayTests */,
+				241C41D1282AB1FF008995C9 /* BathWashForWatch */,
+				241C41D9282AB203008995C9 /* BathWashForWatch WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		241C41D0282AB1FF008995C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				241C41D5282AB203008995C9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		241C41D8282AB203008995C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				241C41ED282AB205008995C9 /* Preview Assets.xcassets in Resources */,
+				241C41EA282AB205008995C9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		249250932829429E009E4417 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -223,6 +394,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		241C41D6282AB203008995C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				241C41FE282AB7F5008995C9 /* WatchConnectivity.swift in Sources */,
+				241C41E4282AB203008995C9 /* NotificationController.swift in Sources */,
+				241C41E2282AB203008995C9 /* ContentView.swift in Sources */,
+				241C41E8282AB203008995C9 /* ComplicationController.swift in Sources */,
+				241C41E0282AB203008995C9 /* BathWashDayApp.swift in Sources */,
+				241C41E6282AB203008995C9 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		249250912829429E009E4417 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -230,6 +414,7 @@
 				2492509D2829429E009E4417 /* ViewController.swift in Sources */,
 				249250BB282946D8009E4417 /* WashDay.swift in Sources */,
 				249250992829429E009E4417 /* AppDelegate.swift in Sources */,
+				241C41FC282AB5CF008995C9 /* WatchService.swift in Sources */,
 				2492509B2829429E009E4417 /* SceneDelegate.swift in Sources */,
 				247E06462829FA2A00C85663 /* NotificationService.swift in Sources */,
 				249250BD28294F19009E4417 /* UserDefaultDao.swift in Sources */,
@@ -247,6 +432,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		241C41DD282AB203008995C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 241C41D9282AB203008995C9 /* BathWashForWatch WatchKit Extension */;
+			targetProxy = 241C41DC282AB203008995C9 /* PBXContainerItemProxy */;
+		};
+		241C41F1282AB205008995C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 241C41D1282AB1FF008995C9 /* BathWashForWatch */;
+			targetProxy = 241C41F0282AB205008995C9 /* PBXContainerItemProxy */;
+		};
 		249250B52829467B009E4417 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 249250942829429E009E4417 /* BathWashDay */;
@@ -274,6 +469,120 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		241C41F4282AB205008995C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BathWashForWatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 39WWX2FY3V;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BathWashForWatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "BathWashForWatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = saitoh0526.k.BathWashDay.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		241C41F5282AB205008995C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BathWashForWatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 39WWX2FY3V;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BathWashForWatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "BathWashForWatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = saitoh0526.k.BathWashDay.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		241C41F8282AB205008995C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 39WWX2FY3V;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = BathWashForWatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = BathWashForWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = saitoh0526.k.BathWashDay;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = saitoh0526.k.BathWashDay.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		241C41F9282AB205008995C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 39WWX2FY3V;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = BathWashForWatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = BathWashForWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = saitoh0526.k.BathWashDay;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = saitoh0526.k.BathWashDay.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
 		249250A7282942A2009E4417 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -483,6 +792,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		241C41F3282AB205008995C9 /* Build configuration list for PBXNativeTarget "BathWashForWatch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				241C41F4282AB205008995C9 /* Debug */,
+				241C41F5282AB205008995C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		241C41F7282AB205008995C9 /* Build configuration list for PBXNativeTarget "BathWashForWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				241C41F8282AB205008995C9 /* Debug */,
+				241C41F9282AB205008995C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		249250902829429E009E4417 /* Build configuration list for PBXProject "BathWashDay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
