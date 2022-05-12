@@ -1,33 +1,16 @@
 //
-//  WashDay.swift
-//  BathWashDay
+//  WashDayCheckService.swift
+//  BashWashCore
 //
-//  Created by 齋藤健悟 on 2022/05/09.
+//  Created by 齋藤健悟 on 2022/05/12.
 //
 
 import Foundation
 
-enum WashDay {
-    case undefined
-    case today
-    case tomorrow
+public struct WashDayCheckService {
+    public init() {}
     
-    var text: String {
-        switch self {
-        case .undefined:
-            return "設定をしてください"
-        case .today:
-            return "風呂掃除をする日です"
-        case .tomorrow:
-            return "風呂掃除をしない日です"
-        }
-    }
-}
-
-struct WashDayCheckService {
-    
-    
-    func check(_ date: Date) -> Bool {
+    public func check(_ date: Date) -> Bool {
         let interval = dateIntervalSinceToday(date)
         return shouldWash(dateInterval: interval)
     }
@@ -64,4 +47,27 @@ struct WashDayCheckService {
         return calendar.date(from: components)!
     }
     
+    public func washDay() -> (WashDay, Date?){
+        let dao = UserDefaultDao()
+        guard let date = dao.storedDate else {
+            return (washDay: .undefined, date: nil)
+        }
+        let shouldWash = check(date)
+        if shouldWash {
+            return (washDay: .today, date: date)
+            
+        } else {
+            return (washDay: .tomorrow, date: date)
+        }
+    }
+    
+    public func setStoredDateToday() {
+        var dao = UserDefaultDao()
+        dao.storedDate = Date()
+    }
+    
+    public func setStoredDateYesterday() {
+        var dao = UserDefaultDao()
+        dao.storedDate = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+    }
 }

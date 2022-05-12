@@ -7,10 +7,13 @@
 
 import Foundation
 
-struct UserDefaultDao {
+public struct UserDefaultDao {
     let userDefault = UserDefaults.standard
     let key = "storedDate"
-    var storedDate: Date? {
+    
+    public init() {}
+    
+    public var storedDate: Date? {
         get {
             if let date = userDefault.object(forKey: key) as? Date {
                 return date

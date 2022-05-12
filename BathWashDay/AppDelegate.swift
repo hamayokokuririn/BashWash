@@ -6,11 +6,10 @@
 //
 
 import UIKit
+import BathWashCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -30,10 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let dao = UserDefaultDao.init()
         if let date = dao.storedDate {
             watch.handler = {
-                watch.transfer(dateString: date.ISO8601Format())
+                if let encoded = try? JSONEncoder().encode(date) {
+                    watch.transfer(dateString: String(data: encoded, encoding: .utf8)!)
+                }
             }
         }
-        
         
         return true
     }

@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var connect = WatchConnectivity()
+    @StateObject var viewModel = ViewModel()
     
     var body: some View {
-        Text(connect.dateString)
-            .padding()
+        VStack(alignment: .leading) {
+            Text("今日は")
+            Text(viewModel.text)
+        }
+        
+        
     }
 }
 

@@ -28,7 +28,8 @@ class NotificationService: NSObject {
         content.title = "風呂掃除をチェック"
         content.sound = UNNotificationSound(named: UNNotificationSoundName("sound.mp3"))
         
-        let trigger = UNCalendarNotificationTrigger(dateMatching: DateComponents(hour: 17), repeats: true)
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: DateComponents(hour: 17), repeats: true)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         let request = UNNotificationRequest(identifier: "today",
                                             content: content,
                                             trigger: trigger)

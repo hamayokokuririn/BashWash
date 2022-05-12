@@ -6,14 +6,14 @@
 //
 
 import Foundation
-
 import WatchConnectivity
+import Combine
+import BathWashCore
 
-final class WatchConnectivity: NSObject, ObservableObject {
+final class WatchConnectivity: NSObject {
 
-    @Published var dateString: String = "--"
-    
     private let session: WCSession
+    let subject = PassthroughSubject<Date, Never>()
     
     init(session: WCSession = .default) {
         self.session = session
@@ -34,11 +34,11 @@ extension WatchConnectivity: WCSessionDelegate {
     }
     
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
-        guard let data = userInfo["dateString"] as? String else {
+        guard let dateString = userInfo["dateString"] as? String,
+              let date = try? JSONDecoder().decode(Date.self, from: dateString.data(using: .utf8)!) else {
             // Error handring if need
             return
         }
-        self.dateString = data
-        print("♥️ \(data)")
+        self.subject.send(date)
     }
 }

@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import BathWashDay
+@testable import BathWashCore
 
 class BathWashDayTests: XCTestCase {
 

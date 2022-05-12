@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import BathWashCore
 
 class ViewController: UIViewController {
 
@@ -13,30 +14,39 @@ class ViewController: UIViewController {
     @IBOutlet weak var lastWashDate: UILabel!
     @IBOutlet weak var navigationBar: UINavigationBar!
     
+    @IBOutlet weak var today: UILabel!
     
-    var dao = UserDefaultDao()
-    let service = WashDayCheckService()
+    private let service = WashDayCheckService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        checkDate()
+        updateText()
+        updateToday()
         navigationBar.delegate = self
         navigationBar.prefersLargeTitles = true
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(willEnterForeground),
+                                               name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
-    func checkDate() {
-        guard let date = dao.storedDate else {
-            updateText(washDay: .undefined, date: nil)
-            return
-        }
-        let shouldWash = service.check(date)
-        if shouldWash {
-            updateText(washDay: .today, date: date)
-            
-        } else {
-            updateText(washDay: .tomorrow, date: date)
-        }
+    @objc func willEnterForeground() {
+        updateText()
+    }
+    
+    func updateText() {
+        let washDay = service.washDay()
+        updateText(washDay: washDay.0, date: washDay.1)
+    }
+    
+    func updateToday() {
+        let f = DateFormatter()
+        f.dateStyle = .medium
+        f.timeStyle = .none
+        f.locale = Locale(identifier: "ja_JP")
+        let text = f.string(from: Date())
+        today.text = "(\(text))"
     }
 
     func updateText(washDay: WashDay, date: Date?) {
@@ -63,15 +73,15 @@ class ViewController: UIViewController {
         
         let actionPositive = UIAlertAction(title: "今日、風呂洗った", style: .default){
             action in
-            self.dao.storedDate = Date()
-            self.checkDate()
+            self.service.setStoredDateToday()
+            self.updateText()
         }
         
         let actionNegative = UIAlertAction(title: "明日洗います", style: .default){
             action in
             // 日付は昨日で設定しておいて明日洗うことにする
-            self.dao.storedDate = Calendar.current.date(byAdding: .day, value: -1, to: Date())
-            self.checkDate()
+            self.service.setStoredDateYesterday()
+            self.updateText()
         }
         
         // actionを追加
