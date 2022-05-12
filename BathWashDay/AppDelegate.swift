@@ -10,7 +10,7 @@ import BathWashCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -23,17 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(error.localizedDescription)
             }
         }
-        
-        let watch = WatchService.shared
-        
-        let dao = UserDefaultDao.init()
-        if let date = dao.storedDate {
-            watch.handler = {
-                if let encoded = try? JSONEncoder().encode(date) {
-                    watch.transfer(dateString: String(data: encoded, encoding: .utf8)!)
-                }
-            }
-        }
+        WatchService.shared.watchTransfer()
         
         return true
     }

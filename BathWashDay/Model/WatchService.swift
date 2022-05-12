@@ -7,10 +7,13 @@
 
 import Foundation
 import WatchConnectivity
+import Combine
+import BathWashCore
 
 final class WatchService: NSObject {
     
-    var handler: (() -> Void)?
+    let subject = PassthroughSubject<Void, Never>()
+    private var cancellable: AnyCancellable?
     
     static let shared = WatchService()
     private let session = WCSession.default
@@ -21,9 +24,21 @@ final class WatchService: NSObject {
         session.activate()
     }
     
-    func transfer(dateString: String) {
-        let userInfo = ["dateString": dateString]
-        session.transferUserInfo(userInfo)
+    func watchTransfer() {
+        let dao = UserDefaultDao()
+        if let date = dao.storedDate {
+            cancellable = subject.sink {
+                self.transfer(date: date)
+            }
+        }
+    }
+    
+    private func transfer(date: Date) {
+        if let encoded = try? JSONEncoder().encode(date) {
+            let dateString = String(data: encoded, encoding: .utf8)!
+            let userInfo = ["dateString": dateString]
+            session.transferUserInfo(userInfo)
+        }
     }
 }
 
@@ -39,7 +54,7 @@ extension WatchService: WCSessionDelegate {
             print(error.localizedDescription)
         } else {
             print("The session has completed activation.")
-            handler?()
+            subject.send()
         }
     }
     

@@ -74,6 +74,7 @@ class ViewController: UIViewController {
         let actionPositive = UIAlertAction(title: "今日、風呂洗った", style: .default){
             action in
             self.service.setStoredDateToday()
+            WatchService.shared.watchTransfer()
             self.updateText()
         }
         
@@ -81,6 +82,7 @@ class ViewController: UIViewController {
             action in
             // 日付は昨日で設定しておいて明日洗うことにする
             self.service.setStoredDateYesterday()
+            WatchService.shared.watchTransfer()
             self.updateText()
         }
         
