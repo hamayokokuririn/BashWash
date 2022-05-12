@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import BathWashCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

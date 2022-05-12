@@ -21,8 +21,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateText()
-        updateToday()
+        update()
         navigationBar.delegate = self
         navigationBar.prefersLargeTitles = true
         
@@ -32,10 +31,15 @@ class ViewController: UIViewController {
     }
     
     @objc func willEnterForeground() {
-        updateText()
+        update()
     }
     
-    func updateText() {
+    func update() {
+        updateWashDay()
+        updateToday()
+    }
+    
+    func updateWashDay() {
         let washDay = service.washDay()
         updateText(washDay: washDay.0, date: washDay.1)
     }
@@ -75,7 +79,7 @@ class ViewController: UIViewController {
             action in
             self.service.setStoredDateToday()
             WatchService.shared.watchTransfer()
-            self.updateText()
+            self.updateWashDay()
         }
         
         let actionNegative = UIAlertAction(title: "明日洗います", style: .default){
@@ -83,7 +87,7 @@ class ViewController: UIViewController {
             // 日付は昨日で設定しておいて明日洗うことにする
             self.service.setStoredDateYesterday()
             WatchService.shared.watchTransfer()
-            self.updateText()
+            self.updateWashDay()
         }
         
         // actionを追加
