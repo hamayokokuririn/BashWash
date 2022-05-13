@@ -10,7 +10,7 @@ import Foundation
 public struct WashDayCheckService {
     public init() {}
     
-    public func check(_ date: Date) -> Bool {
+    public func check(_ date: Date, today: Date = Date()) -> Bool {
         let interval = dateIntervalSinceToday(date)
         return shouldWash(dateInterval: interval)
     }
@@ -47,12 +47,12 @@ public struct WashDayCheckService {
         return calendar.date(from: components)!
     }
     
-    public func washDay() -> (WashDay, Date?){
+    public func washDay(today: Date = Date()) -> (WashDay, Date?){
         let dao = UserDefaultDao()
         guard let date = dao.storedDate else {
             return (washDay: .undefined, date: nil)
         }
-        let shouldWash = check(date)
+        let shouldWash = check(date, today: today)
         if shouldWash {
             return (washDay: .today, date: date)
             

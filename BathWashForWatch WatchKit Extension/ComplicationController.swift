@@ -6,6 +6,26 @@
 //
 
 import ClockKit
+import SwiftUI
+import BathWashCore
+
+extension ComplicationController {
+    func makeTemplate(
+        for washDay: WashDay,
+        complication: CLKComplication
+    ) -> CLKComplicationTemplate? {
+        switch complication.family {
+        case .graphicCorner:
+            return CLKComplicationTemplateGraphicCornerStackText(
+                innerTextProvider: CLKSimpleTextProvider(text: washDay.text),
+                outerTextProvider: CLKSimpleTextProvider(text: "Bath")
+            )
+        default:
+            return nil
+        }
+    }
+}
+
 
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
@@ -42,12 +62,39 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         // Call the handler with the current timeline entry
-        handler(nil)
+        let service = WashDayCheckService.init()
+        let washDay = service.washDay().0
+        if let template = makeTemplate(for: washDay, complication: complication) {
+          let entry = CLKComplicationTimelineEntry(
+            date: Date() ,
+            complicationTemplate: template)
+          handler(entry)
+        } else {
+          handler(nil)
+        }
     }
     
     func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
         // Call the handler with the timeline entries after the given date
-        handler(nil)
+
+        var entries: [CLKComplicationTimelineEntry] = []
+        
+        // リミットまで登録する
+        for i in 0...limit {
+            guard let addedDate = Calendar.current.date(byAdding: .day, value: i, to: date) else {
+                break
+            }
+            let service = WashDayCheckService()
+            let washDay = service.washDay(today: addedDate)
+            if let nextWashDate = washDay.1,
+                let template = makeTemplate(for: washDay.0, complication: complication) {
+                let entry = CLKComplicationTimelineEntry(
+                    date: nextWashDate,
+                    complicationTemplate: template)
+            entries.append(entry)
+          }
+        }
+        handler(entries)
     }
 
     // MARK: - Sample Templates

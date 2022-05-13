@@ -32,6 +32,7 @@
 		241C4228282C56FC008995C9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C4227282C56FC008995C9 /* ViewModel.swift */; };
 		241C422A282C5C97008995C9 /* BathWashCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241C4204282C535F008995C9 /* BathWashCore.framework */; };
 		241C422B282C5C97008995C9 /* BathWashCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 241C4204282C535F008995C9 /* BathWashCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24224E19282E68E700A86160 /* ComplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24224E18282E68E700A86160 /* ComplicationView.swift */; };
 		247E06462829FA2A00C85663 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247E06452829FA2A00C85663 /* NotificationService.swift */; };
 		249250992829429E009E4417 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249250982829429E009E4417 /* AppDelegate.swift */; };
 		2492509B2829429E009E4417 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2492509A2829429E009E4417 /* SceneDelegate.swift */; };
@@ -162,6 +163,7 @@
 		241C420D282C535F008995C9 /* BathWashCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BathWashCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		241C4224282C53F8008995C9 /* WashDayCheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashDayCheckService.swift; sourceTree = "<group>"; };
 		241C4227282C56FC008995C9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		24224E18282E68E700A86160 /* ComplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationView.swift; sourceTree = "<group>"; };
 		247E06452829FA2A00C85663 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		249250952829429E009E4417 /* BathWashDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BathWashDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		249250982829429E009E4417 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				241C41EE282AB205008995C9 /* Info.plist */,
 				241C41EF282AB205008995C9 /* PushNotificationPayload.apns */,
 				241C41EB282AB205008995C9 /* Preview Content */,
+				24224E18282E68E700A86160 /* ComplicationView.swift */,
 			);
 			path = "BathWashForWatch WatchKit Extension";
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				241C41E8282AB203008995C9 /* ComplicationController.swift in Sources */,
 				241C41E0282AB203008995C9 /* BathWashDayApp.swift in Sources */,
 				241C41E6282AB203008995C9 /* NotificationView.swift in Sources */,
+				24224E19282E68E700A86160 /* ComplicationView.swift in Sources */,
 				241C4228282C56FC008995C9 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -713,7 +717,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BathWashForWatch WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "BathWashForWatch WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -744,7 +748,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BathWashForWatch WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "BathWashForWatch WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
