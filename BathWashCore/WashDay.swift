@@ -22,5 +22,16 @@ public enum WashDay {
             return "風呂掃除をしない日です"
         }
     }
+    
+    public var textForComplication: String {
+        switch self {
+        case .undefined:
+            return "Unknown"
+        case .today:
+            return "Enjoy Washing"
+        case .tomorrow:
+            return "NO Washing"
+        }
+    }
 }
 

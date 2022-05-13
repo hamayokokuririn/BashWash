@@ -17,7 +17,7 @@ extension ComplicationController {
         switch complication.family {
         case .graphicCorner:
             return CLKComplicationTemplateGraphicCornerStackText(
-                innerTextProvider: CLKSimpleTextProvider(text: washDay.text),
+                innerTextProvider: CLKSimpleTextProvider(text: washDay.textForComplication),
                 outerTextProvider: CLKSimpleTextProvider(text: "Bath")
             )
         default:
@@ -64,13 +64,16 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         // Call the handler with the current timeline entry
         let service = WashDayCheckService.init()
         let washDay = service.washDay().0
-        if let template = makeTemplate(for: washDay, complication: complication) {
-          let entry = CLKComplicationTimelineEntry(
-            date: Date() ,
-            complicationTemplate: template)
-          handler(entry)
+        
+        if let date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date()),
+           let nextDate = Calendar.current.date(byAdding: .day, value: 1, to: date),
+           let template = makeTemplate(for: washDay, complication: complication) {
+            let entry = CLKComplicationTimelineEntry(
+                date:  nextDate,
+                complicationTemplate: template)
+            handler(entry)
         } else {
-          handler(nil)
+            handler(nil)
         }
     }
     

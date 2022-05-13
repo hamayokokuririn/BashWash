@@ -15,8 +15,6 @@ struct ContentView: View {
             Text("今日は")
             Text(viewModel.text)
         }
-        
-        
     }
 }
 
