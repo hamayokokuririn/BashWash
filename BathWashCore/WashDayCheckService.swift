@@ -11,7 +11,7 @@ public struct WashDayCheckService {
     public init() {}
     
     public func check(_ date: Date, today: Date = Date()) -> Bool {
-        let interval = dateIntervalSinceToday(date)
+        let interval = dateInterval(date, since: today)
         return shouldWash(dateInterval: interval)
     }
     
@@ -24,10 +24,10 @@ public struct WashDayCheckService {
         return dateInterval.isMultiple(of: 2)
     }
     
-    func dateIntervalSinceToday(_ date: Date, today: Date = Date()) -> Int {
+    func dateInterval(_ date: Date, since target: Date = Date()) -> Int {
         // 日付の数字だけで比較する24時間経過していなくても日付が変更していれば変更とみなす
         let resetDate = resetTime(date: date)
-        let resetToday = resetTime(date: today)
+        let resetToday = resetTime(date: target)
         
         let interval = resetToday.timeIntervalSince(resetDate)
         let ret = interval / 86400

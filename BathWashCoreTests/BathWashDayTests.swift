@@ -14,15 +14,15 @@ class BathWashDayTests: XCTestCase {
         let s = WashDayCheckService()
         let comp = DateComponents(month: 1, day: 2, hour: 0, minute: 0)
         let date = Calendar.current.date(from: comp)!
-        var result = s.dateIntervalSinceToday(date, today: date)
+        var result = s.dateInterval(date, since: date)
         XCTAssertEqual(result, 0)
         
         var modifiedDate = Calendar.current.date(byAdding: .day, value: -1, to: date)!
-        result = s.dateIntervalSinceToday(modifiedDate, today: date)
+        result = s.dateInterval(modifiedDate, since: date)
         XCTAssertEqual(result, 1)
         
         modifiedDate = Calendar.current.date(byAdding: .hour, value: -1, to: date)!
-        result = s.dateIntervalSinceToday(modifiedDate, today: date)
+        result = s.dateInterval(modifiedDate, since: date)
         // １時間だけでも前日だから一日経過したことになる
         XCTAssertEqual(result, 1)
     }
