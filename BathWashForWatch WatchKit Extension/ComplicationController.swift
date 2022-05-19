@@ -34,23 +34,16 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
         let descriptors = [
-            CLKComplicationDescriptor(identifier: "complication", displayName: "BathWashDay", supportedFamilies: CLKComplicationFamily.allCases)
-            // Multiple complication support can be added here with more descriptors
+            CLKComplicationDescriptor(identifier: "complication", displayName: "BathWashDay", supportedFamilies: [.graphicCorner])
         ]
-        
-        // Call the handler with the currently supported complication descriptors
         handler(descriptors)
     }
     
-    func handleSharedComplicationDescriptors(_ complicationDescriptors: [CLKComplicationDescriptor]) {
-        // Do any necessary work to support these newly shared complication descriptors
-    }
-
     // MARK: - Timeline Configuration
     
     func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-        // Call the handler with the last entry date you can currently provide or nil if you can't support future timelines
-        handler(nil)
+        let futureDate = Calendar.current.date(byAdding: .day, value: 10, to: Date())
+        handler(futureDate)
     }
     
     func getPrivacyBehavior(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationPrivacyBehavior) -> Void) {
@@ -65,11 +58,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         let service = WashDayCheckService.init()
         let washDay = service.washDay().0
         
-        if let date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date()),
-           let nextDate = Calendar.current.date(byAdding: .day, value: 1, to: date),
-           let template = makeTemplate(for: washDay, complication: complication) {
+        if let template = makeTemplate(for: washDay, complication: complication) {
             let entry = CLKComplicationTimelineEntry(
-                date:  nextDate,
+                date:  Date(),
                 complicationTemplate: template)
             handler(entry)
         } else {
@@ -80,22 +71,18 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
         // Call the handler with the timeline entries after the given date
 
-        var entries: [CLKComplicationTimelineEntry] = []
-        
-        // リミットまで登録する
-        for i in 0...limit {
-            guard let addedDate = Calendar.current.date(byAdding: .day, value: i, to: date) else {
-                break
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.locale = Locale(identifier: "ja_JP")
+        let washInFuture = WashInFuture()
+        let list = washInFuture.washList(after: date, limit: limit)
+        let entries: [CLKComplicationTimelineEntry] = list.compactMap { wash in
+            guard let template = makeTemplate(for: wash.washDay, complication: complication) else {
+                return nil
             }
-            let service = WashDayCheckService()
-            let washDay = service.washDay(today: addedDate)
-            if let nextWashDate = washDay.1,
-                let template = makeTemplate(for: washDay.0, complication: complication) {
-                let entry = CLKComplicationTimelineEntry(
-                    date: nextWashDate,
-                    complicationTemplate: template)
-            entries.append(entry)
-          }
+            let entry = CLKComplicationTimelineEntry(
+                date: wash.date,
+                complicationTemplate: template)
+            return entry
         }
         handler(entries)
     }
@@ -104,6 +91,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
-        handler(nil)
+        let template = CLKComplicationTemplateGraphicCornerStackText(
+            innerTextProvider: CLKSimpleTextProvider(text: WashDay.today.textForComplication),
+            outerTextProvider: CLKSimpleTextProvider(text: "Bath")
+        )
+        handler(template)
     }
 }

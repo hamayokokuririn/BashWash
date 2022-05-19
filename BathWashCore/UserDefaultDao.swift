@@ -7,7 +7,11 @@
 
 import Foundation
 
-public struct UserDefaultDao {
+public protocol StoreDateProtocol {
+    var storedDate: Date? { get set }
+}
+
+public struct UserDefaultDao: StoreDateProtocol {
     let userDefault = UserDefaults.standard
     let key = "storedDate"
     

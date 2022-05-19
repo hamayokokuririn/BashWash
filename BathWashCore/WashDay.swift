@@ -35,3 +35,7 @@ public enum WashDay {
     }
 }
 
+public struct Wash {
+    public let washDay: WashDay
+    public let date: Date
+}

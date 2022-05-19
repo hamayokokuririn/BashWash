@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var today: UILabel!
     
-    private let service = WashDayCheckService()
+    private var service = WashDayCheckService()
     
     override func viewDidLoad() {
         super.viewDidLoad()

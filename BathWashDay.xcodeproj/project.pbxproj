@@ -33,6 +33,8 @@
 		241C422A282C5C97008995C9 /* BathWashCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241C4204282C535F008995C9 /* BathWashCore.framework */; };
 		241C422B282C5C97008995C9 /* BathWashCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 241C4204282C535F008995C9 /* BathWashCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24224E19282E68E700A86160 /* ComplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24224E18282E68E700A86160 /* ComplicationView.swift */; };
+		245448292835E153003ACBF4 /* WashInFuture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245448282835E153003ACBF4 /* WashInFuture.swift */; };
+		2454482B2835E3C4003ACBF4 /* WashInFutureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2454482A2835E3C4003ACBF4 /* WashInFutureTests.swift */; };
 		247E06462829FA2A00C85663 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247E06452829FA2A00C85663 /* NotificationService.swift */; };
 		249250992829429E009E4417 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249250982829429E009E4417 /* AppDelegate.swift */; };
 		2492509B2829429E009E4417 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2492509A2829429E009E4417 /* SceneDelegate.swift */; };
@@ -164,6 +166,8 @@
 		241C4224282C53F8008995C9 /* WashDayCheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashDayCheckService.swift; sourceTree = "<group>"; };
 		241C4227282C56FC008995C9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		24224E18282E68E700A86160 /* ComplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationView.swift; sourceTree = "<group>"; };
+		245448282835E153003ACBF4 /* WashInFuture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashInFuture.swift; sourceTree = "<group>"; };
+		2454482A2835E3C4003ACBF4 /* WashInFutureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashInFutureTests.swift; sourceTree = "<group>"; };
 		247E06452829FA2A00C85663 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		249250952829429E009E4417 /* BathWashDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BathWashDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		249250982829429E009E4417 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -271,6 +275,7 @@
 				249250BC28294F19009E4417 /* UserDefaultDao.swift */,
 				241C4206282C535F008995C9 /* BashWashCore.h */,
 				241C4207282C535F008995C9 /* BashWashCore.docc */,
+				245448282835E153003ACBF4 /* WashInFuture.swift */,
 			);
 			path = BathWashCore;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				249250B22829467B009E4417 /* BathWashDayTests.swift */,
+				2454482A2835E3C4003ACBF4 /* WashInFutureTests.swift */,
 			);
 			path = BathWashCoreTests;
 			sourceTree = "<group>";
@@ -613,6 +619,7 @@
 			files = (
 				241C4225282C53F8008995C9 /* WashDayCheckService.swift in Sources */,
 				241C4208282C535F008995C9 /* BashWashCore.docc in Sources */,
+				245448292835E153003ACBF4 /* WashInFuture.swift in Sources */,
 				241C4223282C53D3008995C9 /* WashDay.swift in Sources */,
 				241C4222282C53D3008995C9 /* UserDefaultDao.swift in Sources */,
 			);
@@ -622,6 +629,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2454482B2835E3C4003ACBF4 /* WashInFutureTests.swift in Sources */,
 				241C4226282C5423008995C9 /* BathWashDayTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

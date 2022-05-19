@@ -8,7 +8,11 @@
 import Foundation
 
 public struct WashDayCheckService {
-    public init() {}
+    private var dao: StoreDateProtocol
+    
+    public init(dao: StoreDateProtocol = UserDefaultDao()) {
+        self.dao = dao
+    }
     
     public func check(_ date: Date, today: Date = Date()) -> Bool {
         let interval = dateInterval(date, since: today)
@@ -36,7 +40,7 @@ public struct WashDayCheckService {
     }
     
     // 時間、分、秒の情報を落とす
-    private func resetTime(date: Date) -> Date {
+    func resetTime(date: Date) -> Date {
         let calendar: Calendar = Calendar(identifier: .gregorian)
         var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
 
@@ -48,7 +52,6 @@ public struct WashDayCheckService {
     }
     
     public func washDay(today: Date = Date()) -> (WashDay, Date?){
-        let dao = UserDefaultDao()
         guard let date = dao.storedDate else {
             return (washDay: .undefined, date: nil)
         }
@@ -61,13 +64,11 @@ public struct WashDayCheckService {
         }
     }
     
-    public func setStoredDateToday() {
-        var dao = UserDefaultDao()
+    public mutating func setStoredDateToday() {
         dao.storedDate = Date()
     }
     
-    public func setStoredDateYesterday() {
-        var dao = UserDefaultDao()
+    public mutating func setStoredDateYesterday() {
         dao.storedDate = Calendar.current.date(byAdding: .day, value: -1, to: Date())
     }
 }
