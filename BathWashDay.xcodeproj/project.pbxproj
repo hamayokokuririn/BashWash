@@ -144,7 +144,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		241C41CE282A1144008995C9 /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sound.mp3; path = ../../../../Downloads/sound.mp3; sourceTree = "<group>"; };
+		241C41CE282A1144008995C9 /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
 		241C41D2282AB1FF008995C9 /* BathWashForWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BathWashForWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		241C41D4282AB203008995C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		241C41DA282AB203008995C9 /* BathWashForWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BathWashForWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
