@@ -7,6 +7,7 @@
 
 import UIKit
 import BathWashCore
+import WidgetKit
 
 class ViewController: UIViewController {
 
@@ -80,6 +81,7 @@ class ViewController: UIViewController {
             self.service.setStoredDateToday()
             WatchService.shared.watchTransfer()
             self.updateWashDay()
+            WidgetCenter.shared.reloadAllTimelines()
         }
         
         let actionNegative = UIAlertAction(title: "明日洗います", style: .default){
@@ -88,6 +90,7 @@ class ViewController: UIViewController {
             self.service.setStoredDateYesterday()
             WatchService.shared.watchTransfer()
             self.updateWashDay()
+            WidgetCenter.shared.reloadAllTimelines()
         }
         
         // actionを追加

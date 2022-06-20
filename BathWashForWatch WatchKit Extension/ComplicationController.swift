@@ -34,7 +34,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
         let descriptors = [
-            CLKComplicationDescriptor(identifier: "complication", displayName: "BathWashDay", supportedFamilies: [.graphicCorner])
+            CLKComplicationDescriptor(identifier: "BathWashComplication", displayName: "BathWashDay", supportedFamilies: [.graphicCorner])
         ]
         handler(descriptors)
     }
@@ -69,10 +69,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
-        // Call the handler with the timeline entries after the given date
 
-        var calendar = Calendar(identifier: .gregorian)
-        calendar.locale = Locale(identifier: "ja_JP")
         let washInFuture = WashInFuture()
         let list = washInFuture.washList(after: date, limit: limit)
         let entries: [CLKComplicationTimelineEntry] = list.compactMap { wash in

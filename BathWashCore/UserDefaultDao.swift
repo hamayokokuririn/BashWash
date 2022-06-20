@@ -12,7 +12,7 @@ public protocol StoreDateProtocol {
 }
 
 public struct UserDefaultDao: StoreDateProtocol {
-    let userDefault = UserDefaults.standard
+    let userDefault = UserDefaults(suiteName: "group.k.saitoh0526.bathwash")!
     let key = "storedDate"
     
     public init() {}
