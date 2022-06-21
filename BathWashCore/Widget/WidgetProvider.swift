@@ -7,6 +7,7 @@
 
 import WidgetKit
 
+@available(iOS 15.0, watchOS 9.0, *)
 public struct Provider: TimelineProvider {
     public init() {}
     

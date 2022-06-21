@@ -87,6 +87,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Sample Templates
     
     func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
+        guard complication.family == .graphicCorner else {
+            handler(nil)
+            return
+        }
         // This method will be called once per supported complication, and the results will be cached
         let template = CLKComplicationTemplateGraphicCornerStackText(
             innerTextProvider: CLKSimpleTextProvider(text: WashDay.today.textForComplication),

@@ -35,7 +35,7 @@ public struct WashDayCheckService {
         
         let interval = resetToday.timeIntervalSince(resetDate)
         let ret = interval / 86400
-
+        
         return Int(floor(ret))
     }
     
@@ -43,11 +43,11 @@ public struct WashDayCheckService {
     func resetTime(date: Date) -> Date {
         let calendar: Calendar = Calendar(identifier: .gregorian)
         var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
-
+        
         components.hour = 0
         components.minute = 0
         components.second = 0
-
+        
         return calendar.date(from: components)!
     }
     
@@ -58,7 +58,6 @@ public struct WashDayCheckService {
         let shouldWash = check(date, today: today)
         if shouldWash {
             return (washDay: .today, date: date)
-            
         } else {
             return (washDay: .tomorrow, date: date)
         }

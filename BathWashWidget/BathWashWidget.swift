@@ -22,6 +22,14 @@ struct BathWashWidgetEntryView : View {
 @main
 struct BathWashWidget: Widget {
     let kind: String = "BathWashWidget"
+    
+    let families: [WidgetFamily] = {
+        if #available(iOSApplicationExtension 16.0, *) {
+            return [.systemSmall, .accessoryInline]
+        } else {
+            return [.systemSmall]
+        }
+    }()
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
@@ -29,7 +37,7 @@ struct BathWashWidget: Widget {
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
-        .supportedFamilies([.systemSmall, .accessoryInline])
+        .supportedFamilies(families)
     }
     
 }
@@ -39,6 +47,6 @@ struct BathWashWidget_Previews: PreviewProvider {
                             text: WashDay.today.textForComplication)
     static var previews: some View {
         BathWashWidgetEntryView(entry: entry)
-            .previewContext(WidgetPreviewContext(family: .accessoryInline))
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

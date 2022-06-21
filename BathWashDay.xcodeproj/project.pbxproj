@@ -28,8 +28,6 @@
 		241C4225282C53F8008995C9 /* WashDayCheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C4224282C53F8008995C9 /* WashDayCheckService.swift */; };
 		241C4226282C5423008995C9 /* BathWashDayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249250B22829467B009E4417 /* BathWashDayTests.swift */; };
 		241C4228282C56FC008995C9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C4227282C56FC008995C9 /* ViewModel.swift */; };
-		241C422A282C5C97008995C9 /* BathWashCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241C4204282C535F008995C9 /* BathWashCore.framework */; };
-		241C422B282C5C97008995C9 /* BathWashCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 241C4204282C535F008995C9 /* BathWashCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24224E19282E68E700A86160 /* ComplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24224E18282E68E700A86160 /* ComplicationView.swift */; };
 		245448292835E153003ACBF4 /* WashInFuture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245448282835E153003ACBF4 /* WashInFuture.swift */; };
 		2454482B2835E3C4003ACBF4 /* WashInFutureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2454482A2835E3C4003ACBF4 /* WashInFutureTests.swift */; };
@@ -43,6 +41,8 @@
 		B542E932285AC36700C45BEE /* BathWashCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241C4204282C535F008995C9 /* BathWashCore.framework */; };
 		B542E933285AC36700C45BEE /* BathWashCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 241C4204282C535F008995C9 /* BathWashCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B542E954285C6AA000C45BEE /* WidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B542E953285C6AA000C45BEE /* WidgetProvider.swift */; };
+		B54D3AD62861932B008AC341 /* BathWashCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241C4204282C535F008995C9 /* BathWashCore.framework */; };
+		B54D3AD72861932B008AC341 /* BathWashCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 241C4204282C535F008995C9 /* BathWashCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B583B0892860CA2D002D4745 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C41E7282AB203008995C9 /* ComplicationController.swift */; };
 		B5EF6565285ABC37007796D8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5EF6564285ABC37007796D8 /* WidgetKit.framework */; };
 		B5EF6567285ABC37007796D8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5EF6566285ABC37007796D8 /* SwiftUI.framework */; };
@@ -94,19 +94,19 @@
 			remoteGlobalIDString = 241C4203282C535F008995C9;
 			remoteInfo = BathWashCore;
 		};
+		B54D3AD82861932B008AC341 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2492508D2829429E009E4417 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 241C4203282C535F008995C9;
+			remoteInfo = BathWashCore;
+		};
 		B5EF656E285ABC38007796D8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2492508D2829429E009E4417 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B5EF6562285ABC36007796D8;
 			remoteInfo = BathWashWidgetExtension;
-		};
-		B5EF6575285ABC84007796D8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2492508D2829429E009E4417 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 241C4203282C535F008995C9;
-			remoteInfo = BathWashCore;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -133,17 +133,6 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		241C422E282C5C97008995C9 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				241C422B282C5C97008995C9 /* BathWashCore.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B542E936285AC36700C45BEE /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -163,6 +152,17 @@
 			files = (
 			);
 			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B54D3ADA2861932C008AC341 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B54D3AD72861932B008AC341 /* BathWashCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B5EF6574285ABC38007796D8 /* Embed Foundation Extensions */ = {
@@ -236,7 +236,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				241C422A282C5C97008995C9 /* BathWashCore.framework in Frameworks */,
+				B54D3AD62861932B008AC341 /* BathWashCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,13 +480,13 @@
 				241C41D0282AB1FF008995C9 /* Resources */,
 				241C41D6282AB203008995C9 /* Sources */,
 				241C41D7282AB203008995C9 /* Frameworks */,
-				241C422E282C5C97008995C9 /* Embed Frameworks */,
 				B542E94C285ADCB600C45BEE /* Embed Foundation Extensions */,
+				B54D3ADA2861932C008AC341 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B5EF6576285ABC84007796D8 /* PBXTargetDependency */,
+				B54D3AD92861932B008AC341 /* PBXTargetDependency */,
 			);
 			name = BathWashForWatch;
 			productName = BathWashForWatch;
@@ -796,15 +796,15 @@
 			target = 241C4203282C535F008995C9 /* BathWashCore */;
 			targetProxy = B542E934285AC36700C45BEE /* PBXContainerItemProxy */;
 		};
+		B54D3AD92861932B008AC341 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 241C4203282C535F008995C9 /* BathWashCore */;
+			targetProxy = B54D3AD82861932B008AC341 /* PBXContainerItemProxy */;
+		};
 		B5EF656F285ABC38007796D8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B5EF6562285ABC36007796D8 /* BathWashWidgetExtension */;
 			targetProxy = B5EF656E285ABC38007796D8 /* PBXContainerItemProxy */;
-		};
-		B5EF6576285ABC84007796D8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 241C4203282C535F008995C9 /* BathWashCore */;
-			targetProxy = B5EF6575285ABC84007796D8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -831,7 +831,6 @@
 		241C41F8282AB205008995C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -856,14 +855,13 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
 		241C41F9282AB205008995C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -888,7 +886,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -907,7 +905,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -918,13 +916,15 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,4";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -943,7 +943,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -954,13 +954,15 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,4";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -1126,12 +1128,12 @@
 				DEVELOPMENT_TEAM = 39WWX2FY3V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BathWashDay/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1157,12 +1159,12 @@
 				DEVELOPMENT_TEAM = 39WWX2FY3V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BathWashDay/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1225,7 +1227,7 @@
 				INFOPLIST_FILE = BathWashWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BathWashWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1254,7 +1256,7 @@
 				INFOPLIST_FILE = BathWashWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BathWashWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
